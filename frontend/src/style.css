@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f4f6fa; color: #172033; }
+.pagina { max-width: 780px; margin: 90px auto; padding: 24px; }
+.marca { background: #2563eb; color: white; width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; font-weight: bold; font-size: 25px; }
+h1 { margin-bottom: 8px; }
+p { color: #566278; line-height: 1.6; }
+.painel { background: white; border: 1px solid #e1e6ef; border-radius: 12px; padding: 24px; margin-top: 32px; }
+h2 { font-size: 20px; }
+a { color: #2563eb; }
