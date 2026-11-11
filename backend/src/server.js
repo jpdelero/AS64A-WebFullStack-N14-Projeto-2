@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 import statusRoutes from './routes/status.routes.js';
+import { tratarErros } from './middlewares/erros.js';
 
 const app = express();
 const porta = Number(process.env.PORT) || 3000;
@@ -14,9 +15,6 @@ app.get('/', (req, res) => {
 });
 app.use('/api', statusRoutes);
 
-app.use((erro, req, res, next) => {
-  console.error(erro.message);
-  res.status(500).json({ erro: 'Erro interno do servidor.' });
-});
+app.use(tratarErros);
 
 app.listen(porta, () => console.log(`Servidor rodando na porta ${porta}`));

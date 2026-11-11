@@ -1,14 +1,16 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Login from './components/Login.jsx';
+import Cadastro from './components/Cadastro.jsx';
+import Dashboard from './components/Dashboard.jsx';
+import RotaProtegida from './components/RotaProtegida.jsx';
+
 export default function App() {
   return (
-    <main className="pagina">
-      <div className="marca">$</div>
-      <h1>Controle Financeiro</h1>
-      <p>Projeto 2 — Programação Web Full Stack</p>
-      <section className="painel">
-        <h2>Estrutura inicial pronta</h2>
-        <p>Frontend React configurado. No próximo commit, vamos implementar cadastro e login.</p>
-        <p>Teste o backend em <a href="http://localhost:3000/" target="_blank" rel="noreferrer">localhost:3000</a>.</p>
-      </section>
-    </main>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/cadastro" element={<Cadastro />} />
+      <Route path="/" element={<RotaProtegida><Dashboard /></RotaProtegida>} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
